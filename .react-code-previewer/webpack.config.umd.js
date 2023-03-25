@@ -60,10 +60,10 @@ module.exports = {
 	},
 	// 注意：本地预览的时候要注释，否则报 require undefined
 	// https://stackoverflow.com/questions/45818937/webpack-uncaught-referenceerror-require-is-not-defined
-	externals: [nodeExternals()],
+	// externals: [nodeExternals()],
 	plugins: [
 		new CleanWebpackPlugin({
-			cleanOnceBeforeBuildPatterns: [distDir],
+			cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'dist')],
 		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].css',
